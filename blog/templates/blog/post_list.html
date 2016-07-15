@@ -1,23 +1,23 @@
-<!DOCTYPE html 
-	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
-	<meta name="Description" content="Blog poświęcony Pawłowi" />
-	<meta name="Keywords" content="Blog,Pawel" />
-	<title>Blog Pawel</title>
-</head>
-<body>
- <div>
-   {% for post in posts %}
-     <div>
-      
-      <h1> <a href"/">{{post.title}}</a></h1>
-      <p>Data publikacji:{{post.published_date}}</p>
-      <p>{{post.text|linebreaksbr}}</p>
-     </div>
-   {% endfor %}
- </div>
-</body>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>blog pawla</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Blog Pawła</a></h1>
+        </div>
+
+        {% for post in posts %}
+            <div>
+                
+                <h2><a href="">{{ post.title }}</a></h2>
+		<p>Data publikacji: {{ post.published_date }}</p>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    </body>
 </html>
