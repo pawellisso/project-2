@@ -10,20 +10,14 @@
 </head>
 <body>
  <div>
-    <div>
-      <p>ta to już prawie wcale</p>
-        <div>
-          <p>ta już mniej</p>
-           <div>
-             <p>to jest najbarzdiej wewnętrzna część strony</p>
-
- 
-
-
-
-           </div>
-       </div>
-   </div>
+   {% for post in posts %}
+     <div>
+      
+      <h1> <a href"/">{{post.title}}</a></h1>
+      <p>Data publikacji:{{post.published_date}}</p>
+      <p>{{post.text|linebreaksbr}}</p>
+     </div>
+   {% endfor %}
  </div>
 </body>
 </html>
